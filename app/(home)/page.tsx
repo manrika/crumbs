@@ -1,8 +1,29 @@
 import Image from "next/image";
+import { createClient } from "@/lib/supabase/server";
+
 import VotingForm from "@/app/(home)/components/VotingForm";
 import { Box } from "@mui/material";
+import { Flavour } from "@/app/types";
+import FlavoursCarousel from "@/app/components/FlavoursCarousel";
 
-export default function Home() {
+export default async function Home() {
+  const supabase = await createClient();
+
+  const { data, error } = await supabase
+    .from("flavours")
+    .select("*")
+    .overrideTypes<Flavour[]>();
+
+  console.log("data", data);
+  console.log("error", error);
+
+  const classicFlavours = data?.filter(
+    (flavour) => flavour.category === "classic",
+  );
+  const seasonalFlavours = data?.filter(
+    (flavour) => flavour.category === "seasonal",
+  );
+
   return (
     // <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
     //   <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white  sm:items-start">
@@ -62,7 +83,9 @@ export default function Home() {
     //       </a>
     //     </div>
     <Box sx={{ backgroundColor: "#FEF8F5", px: "36px" }}>
-      <VotingForm />
+      <FlavoursCarousel title="Classics" flavours={classicFlavours || []} />
+      <FlavoursCarousel title="Seasonals" flavours={seasonalFlavours || []} />
+      <VotingForm flavours={data || []} />
     </Box>
     //   </main>
     // </div>

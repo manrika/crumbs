@@ -4,6 +4,7 @@ import SingleSelectCardList from "@/app/components/SingleSelectCardList";
 import Button from "@/app/components/Button";
 import { useState } from "react";
 import Input from "@/app/components/Input";
+import { Flavour } from "@/app/types";
 
 const flavours = [
   {
@@ -33,7 +34,11 @@ const flavours = [
   },
 ];
 
-const VotingForm: React.FC = () => {
+type Props = {
+  flavours: Flavour[];
+};
+
+const VotingForm: React.FC<Props> = ({ flavours }) => {
   const [flavour, setFlavour] = useState("funfetti");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

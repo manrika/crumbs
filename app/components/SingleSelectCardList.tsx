@@ -7,15 +7,10 @@ import {
   FormControlLabel,
   Typography,
 } from "@mui/material";
-
-type SelectCardOption = {
-  value: string;
-  title: string;
-  description: string;
-};
+import { Flavour } from "@/app/types";
 
 type SingleSelectCardListProps = {
-  options: SelectCardOption[];
+  options: Flavour[];
   value?: string;
   onChange?: (value: string) => void;
   name?: string;
@@ -52,11 +47,11 @@ const SingleSelectCardList: React.FC<SingleSelectCardListProps> = ({
         sx={{ gap: "8px" }}
       >
         {options.map((option) => {
-          const selected = selectedValue === option.value;
+          const selected = selectedValue === option.id;
 
           return (
             <Box
-              key={option.value}
+              key={option.id}
               sx={{
                 border: "2px solid",
                 borderColor: selected ? "#361D00" : "#F5EAE1",
@@ -69,7 +64,7 @@ const SingleSelectCardList: React.FC<SingleSelectCardListProps> = ({
               }}
             >
               <FormControlLabel
-                value={option.value}
+                value={option.id}
                 control={
                   <Radio
                     sx={{
@@ -103,7 +98,7 @@ const SingleSelectCardList: React.FC<SingleSelectCardListProps> = ({
                         textTransform: "uppercase",
                       }}
                     >
-                      {option.title}
+                      {option.name}
                     </Typography>
 
                     <Typography
