@@ -39,7 +39,7 @@ const Footer = () => {
           sx={{
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 600,
-            fontSize: 12,
+            fontSize: 10,
             letterSpacing: "0.5px",
             textTransform: "uppercase",
           }}
@@ -69,7 +69,7 @@ const Footer = () => {
           sx={{
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 600,
-            fontSize: 12,
+            fontSize: 10,
             letterSpacing: "0.5px",
             textTransform: "uppercase",
           }}

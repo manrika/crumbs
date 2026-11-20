@@ -28,7 +28,7 @@ export default async function Home() {
   );
 
   return (
-    <Box sx={{ backgroundColor: "#FEF8F5", px: "24px" }}>
+    <Box sx={{ backgroundColor: "#FEF8F5", px: "18px" }}>
       <Box
         sx={{
           display: "flex",
