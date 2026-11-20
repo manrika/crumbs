@@ -12,11 +12,20 @@ import Tagline from "@/app/components/Tagline";
 import AnnouncementTicker from "@/app/components/AnnouncementTicker";
 
 const heroItems = [
-  { title: "Treat yourself", description: "New York style fudgy cookies" },
-  { title: "Send some sweetness", description: "Cookies made for gifting" },
+  {
+    title: "Treat yourself",
+    description: "New York style fudgy cookies",
+    image: "/images/cookie_sunshine_shot.jpg",
+  },
+  {
+    title: "Send some sweetness",
+    description: "Cookies made for gifting",
+    image: "/images/classic_box.jpg",
+  },
   {
     title: "Mark the moment",
     description: "Personalised for your special day",
+    image: "/images/personalised_hen.jpg",
   },
 ];
 
