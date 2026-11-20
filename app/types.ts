@@ -5,3 +5,9 @@ export type Flavour = {
   category: string;
   image_url?: string;
 };
+
+export type Review = {
+  id: string;
+  review: string;
+  order_type: string;
+};

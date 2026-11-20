@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 
 import VotingForm from "@/app/(home)/components/VotingForm";
 import { Box } from "@mui/material";
-import { Flavour } from "@/app/types";
+import { Flavour, Review } from "@/app/types";
 import FlavoursCarousel from "@/app/components/FlavoursCarousel";
 import CrumbsLogo from "@/app/components/CrumbsLogo";
 import NavBar from "@/app/components/NavBar";
@@ -10,6 +10,7 @@ import Footer from "@/app/components/Footer";
 import HeroCarousel from "@/app/components/HeroCarousel";
 import Tagline from "@/app/components/Tagline";
 import AnnouncementTicker from "@/app/components/AnnouncementTicker";
+import ReviewCarousel from "@/app/components/Reviews/ReviewCarousel";
 
 const heroItems = [
   {
@@ -32,18 +33,20 @@ const heroItems = [
 export default async function Home() {
   const supabase = await createClient();
 
-  const { data, error } = await supabase
+  const { data: flavoursData } = await supabase
     .from("flavours")
     .select("*")
     .overrideTypes<Flavour[]>();
 
-  console.log("data", data);
-  console.log("error", error);
+  const { data: reviewsData } = await supabase
+    .from("reviews")
+    .select("*")
+    .overrideTypes<Review[]>();
 
-  const classicFlavours = data?.filter(
+  const classicFlavours = flavoursData?.filter(
     (flavour) => flavour.category === "classic",
   );
-  const seasonalFlavours = data?.filter(
+  const seasonalFlavours = flavoursData?.filter(
     (flavour) => flavour.category === "seasonal",
   );
 
@@ -78,6 +81,7 @@ export default async function Home() {
         </Box>
         <FlavoursCarousel title="Classics" flavours={classicFlavours || []} />
         <FlavoursCarousel title="Seasonals" flavours={seasonalFlavours || []} />
+        <ReviewCarousel reviews={reviewsData || []} />
       </Box>
       <Box sx={{ mt: 4, display: "flex", flexDirection: "column", gap: 3 }}>
         <Footer />
