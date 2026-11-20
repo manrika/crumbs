@@ -9,6 +9,7 @@ import NavBar from "@/app/components/NavBar";
 import Footer from "@/app/components/Footer";
 import HeroCarousel from "@/app/components/HeroCarousel";
 import Tagline from "@/app/components/Tagline";
+import AnnouncementTicker from "@/app/components/AnnouncementTicker";
 
 const heroItems = [
   { title: "Treat yourself", description: "New York style fudgy cookies" },
@@ -64,6 +65,7 @@ export default async function Home() {
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Tagline />
           <HeroCarousel items={heroItems} />
+          <AnnouncementTicker />
         </Box>
         <FlavoursCarousel title="Classics" flavours={classicFlavours || []} />
         <FlavoursCarousel title="Seasonals" flavours={seasonalFlavours || []} />
