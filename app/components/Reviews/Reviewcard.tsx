@@ -61,7 +61,7 @@ const ReviewCard: React.FC<Props> = ({ review, order_type }) => {
             textTransform: "uppercase",
           }}
         >
-          {order_type}
+          {`${order_type} order`}
         </Typography>
       </Box>
     </Box>
