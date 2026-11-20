@@ -6,6 +6,8 @@ import { Box } from "@mui/material";
 import { Flavour } from "@/app/types";
 import FlavoursCarousel from "@/app/components/FlavoursCarousel";
 import CrumbsLogo from "@/app/components/CrumbsLogo";
+import NavBar from "@/app/components/NavBar";
+import Footer from "@/app/components/Footer";
 
 export default async function Home() {
   const supabase = await createClient();
@@ -26,13 +28,28 @@ export default async function Home() {
   );
 
   return (
-    <Box sx={{ backgroundColor: "#FEF8F5", px: "36px" }}>
-      <Box sx={{ display: "flex", justifyContent: "center", py: "32px" }}>
+    <Box sx={{ backgroundColor: "#FEF8F5", px: "24px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
+          justifyContent: "center",
+          py: "32px",
+          alignItems: "center",
+        }}
+      >
         <CrumbsLogo />
+        <NavBar />
       </Box>
-      <FlavoursCarousel title="Classics" flavours={classicFlavours || []} />
-      <FlavoursCarousel title="Seasonals" flavours={seasonalFlavours || []} />
-      <VotingForm flavours={data || []} />
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+        <FlavoursCarousel title="Classics" flavours={classicFlavours || []} />
+        <FlavoursCarousel title="Seasonals" flavours={seasonalFlavours || []} />
+      </Box>
+      <Box sx={{ mt: 4, display: "flex", flexDirection: "column", gap: 3 }}>
+        <Footer />
+      </Box>
+      {/* <VotingForm flavours={data || []} /> */}
     </Box>
   );
 }
