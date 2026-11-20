@@ -28,7 +28,15 @@ export default async function Home() {
   );
 
   return (
-    <Box sx={{ backgroundColor: "#FEF8F5", px: "18px" }}>
+    <Box
+      sx={{
+        backgroundColor: "#FEF8F5",
+        px: "18px",
+        width: "100%",
+        overflowX: "clip",
+        overscrollBehaviorX: "none",
+      }}
+    >
       <Box
         sx={{
           display: "flex",
