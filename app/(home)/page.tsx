@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { createClient } from "@/lib/supabase/server";
 
 import VotingForm from "@/app/(home)/components/VotingForm";
@@ -8,6 +7,17 @@ import FlavoursCarousel from "@/app/components/FlavoursCarousel";
 import CrumbsLogo from "@/app/components/CrumbsLogo";
 import NavBar from "@/app/components/NavBar";
 import Footer from "@/app/components/Footer";
+import HeroCarousel from "@/app/components/HeroCarousel";
+import Tagline from "@/app/components/Tagline";
+
+const heroItems = [
+  { title: "Treat yourself", description: "New York style fudgy cookies" },
+  { title: "Send some sweetness", description: "Cookies made for gifting" },
+  {
+    title: "Mark the moment",
+    description: "Personalised for your special day",
+  },
+];
 
 export default async function Home() {
   const supabase = await createClient();
@@ -43,7 +53,7 @@ export default async function Home() {
           flexDirection: "column",
           gap: 2,
           justifyContent: "center",
-          py: "32px",
+          py: "24px",
           alignItems: "center",
         }}
       >
@@ -51,6 +61,10 @@ export default async function Home() {
         <NavBar />
       </Box>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+          <Tagline />
+          <HeroCarousel items={heroItems} />
+        </Box>
         <FlavoursCarousel title="Classics" flavours={classicFlavours || []} />
         <FlavoursCarousel title="Seasonals" flavours={seasonalFlavours || []} />
       </Box>
