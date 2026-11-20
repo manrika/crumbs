@@ -3,4 +3,5 @@ export type Flavour = {
   name: string;
   description: string;
   category: string;
+  image_url?: string;
 };
