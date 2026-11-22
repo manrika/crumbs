@@ -20,3 +20,13 @@ export type PopUp = {
   start_time: string;
   end_time: string;
 };
+
+export type CrumbiesNominee = {
+  id: string;
+  flavour_id: string;
+  description: string;
+  year: string;
+  flavour: {
+    name: string;
+  };
+};

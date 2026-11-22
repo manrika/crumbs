@@ -1,5 +1,5 @@
 import PageContainer from "@/app/components/PageContainer";
-import { Flavour } from "@/app/types";
+import { CrumbiesNominee } from "@/app/types";
 import VotingForm from "@/app/vote/components/VotingForm";
 import { createClient } from "@/lib/supabase/server";
 import { Typography } from "@mui/material";
@@ -7,10 +7,17 @@ import { Typography } from "@mui/material";
 export default async function Vote() {
   const supabase = await createClient();
 
-  const { data: flavoursData } = await supabase
-    .from("flavours")
-    .select("*")
-    .overrideTypes<Flavour[]>();
+  const { data: nominees } = await supabase
+    .from("crumbies_nominees")
+    .select(
+      `
+    *,
+    flavour:flavours (
+      name
+    )
+  `,
+    )
+    .overrideTypes<CrumbiesNominee[]>();
 
   return (
     <PageContainer showBreadCrumbs>
@@ -38,7 +45,7 @@ export default async function Vote() {
         Help us crown the CRUMBS cookie of 2026 and a chance to win a box of
         cookies on us!
       </Typography>
-      <VotingForm flavours={flavoursData || []} />
+      <VotingForm nominees={nominees || []} />
     </PageContainer>
   );
 }

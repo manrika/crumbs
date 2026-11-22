@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Box, Typography } from "@mui/material";
-import { Flavour } from "@/app/types";
+import { CrumbiesNominee } from "@/app/types";
 
 type SingleSelectCardListProps = {
-  options: Flavour[];
+  options: CrumbiesNominee[];
   value?: string;
   onChange?: (value: string) => void;
   name?: string;
@@ -21,9 +21,9 @@ const SingleSelectCardList: React.FC<SingleSelectCardListProps> = ({
       aria-label={name}
       sx={{
         width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        gap: "8px",
+        display: "grid",
+        gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+        gap: "12px",
       }}
     >
       {options.map((option) => {
@@ -69,6 +69,7 @@ const SingleSelectCardList: React.FC<SingleSelectCardListProps> = ({
                 display: "flex",
                 flexDirection: "column",
                 gap: "2px",
+                height: "100%",
               }}
             >
               <Typography
@@ -82,7 +83,7 @@ const SingleSelectCardList: React.FC<SingleSelectCardListProps> = ({
                   textTransform: "uppercase",
                 }}
               >
-                {option.name}
+                {option.flavour.name}
               </Typography>
 
               <Typography

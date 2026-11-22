@@ -4,41 +4,13 @@ import SingleSelectCardList from "@/app/components/SingleSelectCardList";
 import Button from "@/app/components/Button";
 import { useState } from "react";
 import Input from "@/app/components/Input";
-import { Flavour } from "@/app/types";
-
-const flavours = [
-  {
-    value: "triple-chocolate",
-    title: "Triple Chocoalte",
-    description: "The full drama.",
-  },
-  {
-    value: "choc-chip-walnut",
-    title: "Choc Chip Walnut",
-    description: "The sophisticated classic.",
-  },
-  {
-    value: "funfetti",
-    title: "Funfetti",
-    description: "The life of the after-party",
-  },
-  {
-    value: "chai-latte",
-    title: "Chai Latte",
-    description: "The spicy scene-stealer",
-  },
-  {
-    value: "kinder-bueno",
-    title: "Kinder Bueno",
-    description: "The crowd-pleasing icon",
-  },
-];
+import { CrumbiesNominee } from "@/app/types";
 
 type Props = {
-  flavours: Flavour[];
+  nominees: CrumbiesNominee[];
 };
 
-const VotingForm: React.FC<Props> = ({ flavours }) => {
+const VotingForm: React.FC<Props> = ({ nominees }) => {
   const [flavour, setFlavour] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -72,7 +44,7 @@ const VotingForm: React.FC<Props> = ({ flavours }) => {
           Select your favourite
         </Typography>
         <SingleSelectCardList
-          options={flavours}
+          options={nominees}
           value={flavour}
           onChange={setFlavour}
           name="flavour"
