@@ -42,7 +42,7 @@ export default async function Vote() {
           letterSpacing: "0.5px",
         }}
       >
-        Help us crown the CRUMBS cookie of 2026 and a chance to win a box of
+        Help us crown the CRUMBS LDN cookie of 2026 and a chance to win a box of
         cookies!
       </Typography>
       <VotingForm nominees={nominees || []} />
