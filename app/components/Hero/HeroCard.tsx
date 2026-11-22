@@ -97,7 +97,7 @@ const HeroCard: React.FC<HeroCardProps> = ({ title, description, image }) => {
             {description}
           </Typography>
         </Box>
-        <Button label="Order now" onPress={onPress} />
+        <Button variant="outlined" label="Order now" onPress={onPress} />
       </Box>
     </Box>
   );
