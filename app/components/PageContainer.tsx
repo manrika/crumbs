@@ -21,6 +21,7 @@ const PageContainer: React.FC<Props> = ({
       sx={{
         backgroundColor: "#FEF8F5",
         px: PAGE_MARGIN,
+        mb: "24px",
         width: "100%",
         overflowX: "clip",
         overscrollBehaviorX: "none",
