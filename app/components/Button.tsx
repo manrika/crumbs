@@ -6,6 +6,7 @@ type Props = {
   onPress: () => void;
   variant?: "outlined" | "filled";
   disabled?: boolean;
+  loading?: boolean;
 };
 
 const Button: React.FC<Props> = ({
@@ -13,6 +14,7 @@ const Button: React.FC<Props> = ({
   onPress,
   variant = "filled",
   disabled,
+  loading,
 }) => {
   "use client";
 
@@ -20,6 +22,7 @@ const Button: React.FC<Props> = ({
 
   return (
     <MUIButton
+      loading={loading}
       disabled={disabled}
       variant={isOutlined ? "outlined" : "contained"}
       sx={{
