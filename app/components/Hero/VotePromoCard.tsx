@@ -2,9 +2,8 @@
 
 import Button from "@/app/components/Button";
 import { Box, Typography } from "@mui/material";
-import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";
-import CookieRoundedIcon from "@mui/icons-material/CookieRounded";
-import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
+import Image from "next/image";
+
 import { useRouter } from "next/navigation";
 
 const VotePromoCard: React.FC = () => {
@@ -24,12 +23,36 @@ const VotePromoCard: React.FC = () => {
         height: "480px",
         borderRadius: "24px",
         overflow: "hidden",
+        flexShrink: 0,
         scrollSnapAlign: "start",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "#BCB4DD",
+        justifyContent: "flex-end",
       }}
     >
+      {/* Background image */}
+      <Image
+        src="/images/crumbies_red_carpet_light.png"
+        alt="yadda"
+        fill
+        sizes="320px"
+        style={{
+          objectFit: "cover",
+        }}
+      />
+
+      {/* Dark gradient overlay */}
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 35%, transparent 65%)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Text on top of image */}
       <Box
         sx={{
           position: "relative",
@@ -38,141 +61,32 @@ const VotePromoCard: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           gap: 3,
-          justifyContent: "space-between",
-          height: "100%",
         }}
       >
-        <Box
+        <Typography
           sx={{
-            mt: "32px",
-            gap: 1,
-            display: "flex",
-            flexDirection: "column",
-            mb: "6px",
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 600,
+            fontSize: 12,
+            color: "#fff",
+            letterSpacing: "8%",
+            textTransform: "uppercase",
+            textAlign: "center",
           }}
         >
-          <Typography
-            sx={{
-              fontFamily: "'Poppins', sans-serif",
-              fontWeight: 800,
-              fontSize: 24,
-              color: "#361D00",
-              letterSpacing: "8%",
-              textTransform: "uppercase",
-              lineHeight: 1.2,
-              px: "42px",
-              textAlign: "center",
-            }}
-          >
-            2026 Crumbies
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "'Poppins', sans-serif",
-              fontWeight: 500,
-              fontSize: 10,
-              color: "#361D00",
-              letterSpacing: "8%",
-              px: "36px",
-              textAlign: "center",
-            }}
-          >
-            Vote for your favourite for a chance to win a box of cookies!
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            position: "relative",
-            width: "180px",
-            height: "150px",
-            alignSelf: "center",
-          }}
-        >
-          {/* Trophy */}
-          <EmojiEventsRoundedIcon
-            sx={{
-              position: "absolute",
-              left: "50%",
-              top: "50%",
-              transform: "translate(-50%, -50%)",
-              fontSize: "156px",
-              color: "#fdb329",
-            }}
-          />
-
-          {/* Cookie - mid/bottom left */}
-          <CookieRoundedIcon
-            sx={{
-              position: "absolute",
-              left: 0,
-              bottom: 18,
-              fontSize: "24px",
-              color: "#361D00",
-              transform: "rotate(-40deg)",
-              zIndex: 2,
-            }}
-          />
-          <CookieRoundedIcon
-            sx={{
-              position: "absolute",
-              left: 21,
-              bottom: -4,
-              fontSize: "24px",
-              color: "#361D00",
-              transform: "rotate(120deg)",
-              zIndex: 2,
-            }}
-          />
-          <CookieRoundedIcon
-            sx={{
-              position: "absolute",
-              left: 24,
-              bottom: 20,
-              fontSize: "24px",
-              color: "#361D00",
-              zIndex: 2,
-            }}
-          />
-
-          {/* Sparkle - top right */}
-          <AutoAwesomeRoundedIcon
-            sx={{
-              position: "absolute",
-              right: 10,
-              top: -2,
-              fontSize: "24px",
-              zIndex: 2,
-              color: "#fff",
-            }}
-          />
-        </Box>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          Vote for your favourite for a chance to{" "}
           <Box
+            component="span"
             sx={{
-              mt: "32px",
-              gap: 0.5,
-              display: "flex",
-              flexDirection: "column",
+              textDecoration: "underline",
+              textUnderlineOffset: "3px",
             }}
           >
-            <Typography
-              sx={{
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: 700,
-                fontSize: 14,
-                color: "#361D00",
-                letterSpacing: "0.5px",
-                textTransform: "uppercase",
-                lineHeight: 1.6,
-                px: "42px",
-                textAlign: "center",
-              }}
-            >
-              {` Every cookie deserves it's moment.`}
-            </Typography>
-          </Box>
-          <Button label="Vote now" onPress={onPress} />
-        </Box>
+            win
+          </Box>{" "}
+          a box of cookies!
+        </Typography>
+        <Button variant="outlined" label="Vote now" onPress={onPress} />
       </Box>
     </Box>
   );
