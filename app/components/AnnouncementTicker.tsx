@@ -11,7 +11,7 @@ const messages = [
     icon: <LocalShippingOutlinedIcon />,
   },
   {
-    text: "East ldn/Cuffley collection",
+    text: "East London/Cuffley collection",
     icon: <StorefrontOutlinedIcon />,
   },
   {

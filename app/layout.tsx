@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Truculenta } from "next/font/google";
+import { Truculenta } from "next/font/google";
 import "./globals.css";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";

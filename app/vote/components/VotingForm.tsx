@@ -43,8 +43,6 @@ const VotingForm: React.FC<Props> = ({ flavours }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  console.log("selected flavourrrr", flavour);
-
   const onPress = () => {
     // todo: submit vote
   };
@@ -59,12 +57,27 @@ const VotingForm: React.FC<Props> = ({ flavours }) => {
         mt: 2,
       }}
     >
-      <SingleSelectCardList
-        options={flavours}
-        value={flavour}
-        onChange={setFlavour}
-        name="flavour"
-      />
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "5px" }}>
+        <Typography
+          component="label"
+          sx={{
+            color: "#3D2008",
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 600,
+            fontSize: 12,
+            textTransform: "uppercase",
+            letterSpacing: "0.5px",
+          }}
+        >
+          Select your favourite
+        </Typography>
+        <SingleSelectCardList
+          options={flavours}
+          value={flavour}
+          onChange={setFlavour}
+          name="flavour"
+        />
+      </Box>
       <Input
         label="Name"
         name="name"

@@ -23,7 +23,7 @@ const heroItems = [
   },
   {
     title: "Mark the moment",
-    description: "Personalised for your special day",
+    description: "Personalised for your occassions",
     image: "/images/personalised_hen.jpg",
   },
 ];
