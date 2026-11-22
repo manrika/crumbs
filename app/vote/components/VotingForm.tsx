@@ -10,10 +10,40 @@ type Props = {
   nominees: CrumbiesNominee[];
 };
 
+const isValidEmail = (email: string) => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
+
 const VotingForm: React.FC<Props> = ({ nominees }) => {
   const [flavour, setFlavour] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [emailTouched, setEmailTouched] = useState(false);
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const nextEmail = e.target.value;
+
+    setEmail(nextEmail);
+
+    if (emailTouched) {
+      setEmailError(
+        nextEmail.trim() === "" || !isValidEmail(nextEmail)
+          ? "Please enter a valid email address."
+          : "",
+      );
+    }
+  };
+
+  const handleEmailBlur = () => {
+    setEmailTouched(true);
+
+    if (!email.trim() || !isValidEmail(email.trim())) {
+      setEmailError("Please enter a valid email address.");
+    } else {
+      setEmailError("");
+    }
+  };
 
   const onPress = () => {
     // todo: submit vote
@@ -61,16 +91,21 @@ const VotingForm: React.FC<Props> = ({ nominees }) => {
       <Input
         label="Email"
         name="email"
+        type="email"
         placeholder="crumbs.lover@gmail.com"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={handleEmailChange}
+        onBlur={handleEmailBlur}
+        error={!!emailError}
+        helperText={emailError}
         required
+        autoComplete="email"
       />
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
         <Button
           label="Vote now"
           onPress={onPress}
-          disabled={!flavour || !name || !email}
+          disabled={!flavour || !name.trim() || !isValidEmail(email.trim())}
         />
         <Typography
           sx={{

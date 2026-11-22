@@ -15,6 +15,7 @@ type InputProps = {
   helperText?: string;
   id?: string;
   autoComplete?: string;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 };
 
 const Input: React.FC<InputProps> = ({
@@ -31,6 +32,7 @@ const Input: React.FC<InputProps> = ({
   helperText,
   id,
   autoComplete,
+  onBlur,
 }: InputProps) => {
   const generatedId = React.useId();
   const inputId = id ?? generatedId;
@@ -72,6 +74,7 @@ const Input: React.FC<InputProps> = ({
         error={error}
         helperText={helperText}
         autoComplete={autoComplete}
+        onBlur={onBlur}
         fullWidth
         variant="outlined"
         sx={{
