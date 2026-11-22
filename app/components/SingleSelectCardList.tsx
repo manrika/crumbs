@@ -53,13 +53,13 @@ const SingleSelectCardList: React.FC<SingleSelectCardListProps> = ({
             <Box
               key={option.id}
               sx={{
-                border: "2px solid",
-                borderColor: selected ? "#361D00" : "#F5EAE1",
+                borderWidth: selected ? "2px" : "1px",
+                borderColor: selected ? "#BCB4DD" : "#F5EAE1",
                 borderRadius: "16px",
                 overflow: "hidden",
                 transition: "border-color 150ms ease",
                 "&:hover": {
-                  borderColor: "#361D00",
+                  borderColor: "#BCB4DD",
                 },
               }}
             >
@@ -92,7 +92,7 @@ const SingleSelectCardList: React.FC<SingleSelectCardListProps> = ({
                       sx={{
                         fontFamily: "'Poppins', sans-serif",
                         fontWeight: 800,
-                        fontSize: 14,
+                        fontSize: 12,
                         color: "#361D00",
                         letterSpacing: "0.5px",
                         textTransform: "uppercase",
@@ -106,8 +106,8 @@ const SingleSelectCardList: React.FC<SingleSelectCardListProps> = ({
                       sx={{
                         color: "#361D00",
                         fontFamily: "'Poppins', sans-serif",
-                        fontWeight: 600,
-                        fontSize: 12,
+                        fontWeight: 500,
+                        fontSize: 10,
                         letterSpacing: "0.5px",
                       }}
                     >
