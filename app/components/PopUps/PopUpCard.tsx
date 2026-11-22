@@ -39,6 +39,7 @@ const PopUpCard: React.FC<Props> = ({
         borderWidth: "2px",
         borderStyle: "solid",
         opacity: pastEvent ? 0.6 : 1,
+        backgroundColor: "#FEF8F5",
       }}
     >
       <Typography

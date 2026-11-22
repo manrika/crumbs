@@ -19,7 +19,7 @@ const PageContainer: React.FC<Props> = ({
   return (
     <Box
       sx={{
-        backgroundColor: "#FEF8F5",
+        backgroundColor: "#F1E6D8",
         px: PAGE_MARGIN,
         mb: "24px",
         width: "100%",
