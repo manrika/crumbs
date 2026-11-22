@@ -50,8 +50,8 @@ const Input: React.FC<InputProps> = ({
         sx={{
           color: "#3D2008",
           fontFamily: "'Poppins', sans-serif",
-          fontWeight: 800,
-          fontSize: 14,
+          fontWeight: 600,
+          fontSize: 12,
           textTransform: "uppercase",
           letterSpacing: "0.5px",
         }}
@@ -77,15 +77,15 @@ const Input: React.FC<InputProps> = ({
         sx={{
           "& .MuiOutlinedInput-root": {
             height: "56px",
-            borderRadius: "11px",
+            borderRadius: "10px",
             color: "#3D2008",
             fontFamily: "'Poppins', sans-serif",
-            fontSize: "14px",
-            fontWeight: 600,
+            fontSize: "12px",
+            fontWeight: 500,
             letterSpacing: "0.5px",
 
             "& fieldset": {
-              border: "1.5px solid #F4E9E0",
+              border: "1px solid #F4E9E0",
             },
 
             "&:hover fieldset": {
@@ -94,7 +94,7 @@ const Input: React.FC<InputProps> = ({
 
             "&.Mui-focused fieldset": {
               borderColor: "#3D2008",
-              borderWidth: "1.5px",
+              borderWidth: "1px",
             },
 
             "&.Mui-error fieldset": {
