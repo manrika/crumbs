@@ -5,15 +5,22 @@ type Props = {
   label: string;
   onPress: () => void;
   variant?: "outlined" | "filled";
+  disabled?: boolean;
 };
 
-const Button: React.FC<Props> = ({ label, onPress, variant = "filled" }) => {
+const Button: React.FC<Props> = ({
+  label,
+  onPress,
+  variant = "filled",
+  disabled,
+}) => {
   "use client";
 
   const isOutlined = variant === "outlined";
 
   return (
     <MUIButton
+      disabled={disabled}
       variant={isOutlined ? "outlined" : "contained"}
       sx={{
         borderRadius: 32,
