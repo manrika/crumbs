@@ -1,11 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
-
-import VotingForm from "@/app/(home)/components/VotingForm";
 import { Box } from "@mui/material";
 import { Flavour, PopUp, Review } from "@/app/types";
 import FlavoursCarousel from "@/app/components/Flavours/FlavoursCarousel";
-import CrumbsLogo from "@/app/components/CrumbsLogo";
-import NavBar from "@/app/components/NavBar";
 import Footer from "@/app/components/Footer";
 import HeroCarousel from "@/app/components/Hero/HeroCarousel";
 import Tagline from "@/app/components/Tagline";
@@ -83,7 +79,6 @@ export default async function Home() {
       <Box sx={{ mt: 4, display: "flex", flexDirection: "column", gap: 3 }}>
         <Footer />
       </Box>
-      {/* <VotingForm flavours={data || []} /> */}
     </PageContainer>
   );
 }
