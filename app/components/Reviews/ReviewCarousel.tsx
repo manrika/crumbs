@@ -1,7 +1,6 @@
 import Carousel from "@/app/components/Carousel";
 import ReviewCard from "@/app/components/Reviews/Reviewcard";
 import { Review } from "@/app/types";
-import { Box, Typography } from "@mui/material";
 
 type Props = {
   reviews: Review[];

@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 
 import VotingForm from "@/app/(home)/components/VotingForm";
 import { Box } from "@mui/material";
-import { Flavour, Review } from "@/app/types";
+import { Flavour, PopUp, Review } from "@/app/types";
 import FlavoursCarousel from "@/app/components/Flavours/FlavoursCarousel";
 import CrumbsLogo from "@/app/components/CrumbsLogo";
 import NavBar from "@/app/components/NavBar";
@@ -11,6 +11,7 @@ import HeroCarousel from "@/app/components/Hero/HeroCarousel";
 import Tagline from "@/app/components/Tagline";
 import AnnouncementTicker from "@/app/components/AnnouncementTicker";
 import ReviewCarousel from "@/app/components/Reviews/ReviewCarousel";
+import PopUpCarousel from "@/app/components/PopUps/PopUpCarousel";
 
 export const PAGE_MARGIN = "18px";
 
@@ -44,6 +45,11 @@ export default async function Home() {
     .from("reviews")
     .select("*")
     .overrideTypes<Review[]>();
+
+  const { data: popUpsData } = await supabase
+    .from("pop_ups")
+    .select("*")
+    .overrideTypes<PopUp[]>();
 
   const classicFlavours = flavoursData?.filter(
     (flavour) => flavour.category === "classic",
@@ -83,6 +89,7 @@ export default async function Home() {
         </Box>
         <FlavoursCarousel title="Classics" flavours={classicFlavours || []} />
         <FlavoursCarousel title="Seasonals" flavours={seasonalFlavours || []} />
+        <PopUpCarousel popUps={popUpsData || []} />
         <ReviewCarousel reviews={reviewsData || []} />
       </Box>
       <Box sx={{ mt: 4, display: "flex", flexDirection: "column", gap: 3 }}>

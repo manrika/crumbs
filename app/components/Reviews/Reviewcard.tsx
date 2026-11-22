@@ -1,6 +1,5 @@
 import { Review } from "@/app/types";
 import { Box, Divider, Typography } from "@mui/material";
-import Image from "next/image";
 
 type Props = Review;
 
