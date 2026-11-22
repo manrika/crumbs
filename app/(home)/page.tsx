@@ -87,9 +87,19 @@ export default async function Home() {
           <HeroCarousel items={heroItems} />
           <AnnouncementTicker />
         </Box>
-        <FlavoursCarousel title="Classics" flavours={classicFlavours || []} />
-        <FlavoursCarousel title="Seasonals" flavours={seasonalFlavours || []} />
-        <PopUpCarousel popUps={popUpsData || []} />
+        <Box
+          id="flavours"
+          sx={{ display: "flex", flexDirection: "column", gap: 3 }}
+        >
+          <FlavoursCarousel title="Classics" flavours={classicFlavours || []} />
+          <FlavoursCarousel
+            title="Seasonals"
+            flavours={seasonalFlavours || []}
+          />
+        </Box>
+        <Box id="pop-ups">
+          <PopUpCarousel popUps={popUpsData || []} />
+        </Box>
         <ReviewCarousel reviews={reviewsData || []} />
       </Box>
       <Box sx={{ mt: 4, display: "flex", flexDirection: "column", gap: 3 }}>

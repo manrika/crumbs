@@ -1,6 +1,29 @@
+"use client";
+
+import Link from "next/link";
 import { Box, Typography } from "@mui/material";
 
 const NavBar = () => {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const navItemStyles = {
+    fontFamily: "'Poppins', sans-serif",
+    fontWeight: 600,
+    fontSize: 12,
+    letterSpacing: "0.5px",
+    textTransform: "uppercase",
+    color: "#FFFFFF",
+    cursor: "pointer",
+    "&:hover": {
+      color: "#361D00",
+    },
+  };
+
   return (
     <Box
       sx={{
@@ -15,40 +38,18 @@ const NavBar = () => {
       }}
     >
       <Typography
-        sx={{
-          fontFamily: "'Poppins', sans-serif",
-          fontWeight: 600,
-          fontSize: 12,
-          letterSpacing: "0.5px",
-          textTransform: "uppercase",
-          color: "#FFFFFF",
-        }}
+        onClick={() => scrollToSection("flavours")}
+        sx={navItemStyles}
       >
         Flavours
       </Typography>
-      <Typography
-        sx={{
-          fontFamily: "'Poppins', sans-serif",
-          fontWeight: 600,
-          fontSize: 12,
-          letterSpacing: "0.5px",
-          textTransform: "uppercase",
-          color: "#FFFFFF",
-        }}
-      >
+
+      <Typography onClick={() => scrollToSection("pop-ups")} sx={navItemStyles}>
         Pop-ups
       </Typography>
-      <Typography
-        sx={{
-          fontFamily: "'Poppins', sans-serif",
-          fontWeight: 600,
-          fontSize: 12,
-          letterSpacing: "0.5px",
-          textTransform: "uppercase",
-          color: "#FFFFFF",
-        }}
-      >
-        Order
+
+      <Typography component={Link} href="/vote" sx={navItemStyles}>
+        Win
       </Typography>
     </Box>
   );
