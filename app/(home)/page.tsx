@@ -3,14 +3,16 @@ import { createClient } from "@/lib/supabase/server";
 import VotingForm from "@/app/(home)/components/VotingForm";
 import { Box } from "@mui/material";
 import { Flavour, Review } from "@/app/types";
-import FlavoursCarousel from "@/app/components/FlavoursCarousel";
+import FlavoursCarousel from "@/app/components/Flavours/FlavoursCarousel";
 import CrumbsLogo from "@/app/components/CrumbsLogo";
 import NavBar from "@/app/components/NavBar";
 import Footer from "@/app/components/Footer";
-import HeroCarousel from "@/app/components/HeroCarousel";
+import HeroCarousel from "@/app/components/Hero/HeroCarousel";
 import Tagline from "@/app/components/Tagline";
 import AnnouncementTicker from "@/app/components/AnnouncementTicker";
 import ReviewCarousel from "@/app/components/Reviews/ReviewCarousel";
+
+export const PAGE_MARGIN = "18px";
 
 const heroItems = [
   {
@@ -54,7 +56,7 @@ export default async function Home() {
     <Box
       sx={{
         backgroundColor: "#FEF8F5",
-        px: "18px",
+        px: PAGE_MARGIN,
         width: "100%",
         overflowX: "clip",
         overscrollBehaviorX: "none",
