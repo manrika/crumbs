@@ -4,6 +4,7 @@ export type Flavour = {
   description: string;
   category: string;
   image_url?: string;
+  active: boolean;
 };
 
 export type Review = {

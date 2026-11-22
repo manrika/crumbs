@@ -47,10 +47,10 @@ export default async function Home() {
     .overrideTypes<PopUp[]>();
 
   const classicFlavours = flavoursData?.filter(
-    (flavour) => flavour.category === "classic",
+    (flavour) => flavour.active && flavour.category === "classic",
   );
   const seasonalFlavours = flavoursData?.filter(
-    (flavour) => flavour.category === "seasonal",
+    (flavour) => flavour.active && flavour.category === "seasonal",
   );
 
   return (
