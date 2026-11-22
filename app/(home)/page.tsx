@@ -9,6 +9,7 @@ import AnnouncementTicker from "@/app/components/AnnouncementTicker";
 import ReviewCarousel from "@/app/components/Reviews/ReviewCarousel";
 import PopUpCarousel from "@/app/components/PopUps/PopUpCarousel";
 import PageContainer from "@/app/components/PageContainer";
+import Gallery from "@/app/components/Gallery";
 
 const heroItems = [
   {
@@ -74,6 +75,7 @@ export default async function Home() {
         <Box id="pop-ups">
           <PopUpCarousel popUps={popUpsData || []} />
         </Box>
+        <Gallery />
         <ReviewCarousel reviews={reviewsData || []} />
       </Box>
       <Box sx={{ mt: 4, display: "flex", flexDirection: "column", gap: 3 }}>
