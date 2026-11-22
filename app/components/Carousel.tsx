@@ -1,4 +1,4 @@
-import { PAGE_MARGIN } from "@/app/(home)/page";
+import { PAGE_MARGIN } from "@/app/components/PageContainer";
 import { Box, Typography } from "@mui/material";
 
 type Props = {

@@ -12,8 +12,7 @@ import Tagline from "@/app/components/Tagline";
 import AnnouncementTicker from "@/app/components/AnnouncementTicker";
 import ReviewCarousel from "@/app/components/Reviews/ReviewCarousel";
 import PopUpCarousel from "@/app/components/PopUps/PopUpCarousel";
-
-export const PAGE_MARGIN = "18px";
+import PageContainer from "@/app/components/PageContainer";
 
 const heroItems = [
   {
@@ -59,28 +58,7 @@ export default async function Home() {
   );
 
   return (
-    <Box
-      sx={{
-        backgroundColor: "#FEF8F5",
-        px: PAGE_MARGIN,
-        width: "100%",
-        overflowX: "clip",
-        overscrollBehaviorX: "none",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 2,
-          justifyContent: "center",
-          py: "24px",
-          alignItems: "center",
-        }}
-      >
-        <CrumbsLogo />
-        <NavBar />
-      </Box>
+    <PageContainer showNavBar>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Tagline />
@@ -106,6 +84,6 @@ export default async function Home() {
         <Footer />
       </Box>
       {/* <VotingForm flavours={data || []} /> */}
-    </Box>
+    </PageContainer>
   );
 }
