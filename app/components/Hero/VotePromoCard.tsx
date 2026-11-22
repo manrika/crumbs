@@ -5,14 +5,13 @@ import { Box, Typography } from "@mui/material";
 import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";
 import CookieRoundedIcon from "@mui/icons-material/CookieRounded";
 import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
+import { useRouter } from "next/navigation";
 
 const VotePromoCard: React.FC = () => {
+  const router = useRouter();
+
   const onPress = () => {
-    window.open(
-      "https://www.instagram.com/crumbs.ldn/",
-      "_blank",
-      "noopener,noreferrer",
-    );
+    router.push("/vote");
   };
 
   return (
