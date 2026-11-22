@@ -10,8 +10,7 @@ const CrumbsLogo = () => {
       href="/"
       sx={{
         fontFamily: "'Truculenta'",
-        fontWeight: 800,
-        fontSize: 24,
+        fontSize: 26,
         color: "#BCB4DD",
         letterSpacing: "5%",
         textTransform: "uppercase",

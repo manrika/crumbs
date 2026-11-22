@@ -10,7 +10,7 @@ import "@fontsource/poppins/900.css";
 
 const truculenta = Truculenta({
   subsets: ["latin"],
-  weight: ["800"],
+  weight: ["900"],
   variable: "--font-truculenta",
 });
 
