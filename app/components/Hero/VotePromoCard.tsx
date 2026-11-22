@@ -73,10 +73,11 @@ const VotePromoCard: React.FC = () => {
               fontSize: 10,
               color: "#361D00",
               letterSpacing: "8%",
+              px: "36px",
               textAlign: "center",
             }}
           >
-            Every cookie deserves it’s moment.
+            Vote for your favourite for a chance to win a box of cookies!
           </Typography>
         </Box>
         <Box
@@ -160,27 +161,14 @@ const VotePromoCard: React.FC = () => {
                 fontWeight: 700,
                 fontSize: 14,
                 color: "#361D00",
-                letterSpacing: "8%",
+                letterSpacing: "0.5px",
                 textTransform: "uppercase",
-                lineHeight: 1.2,
-                px: "12px",
+                lineHeight: 1.6,
+                px: "42px",
                 textAlign: "center",
               }}
             >
-              Your vote. Your favourite.
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "'Poppins', sans-serif",
-                fontWeight: 700,
-                fontSize: 14,
-                color: "#361D00",
-                letterSpacing: "8%",
-                textAlign: "center",
-                textTransform: "uppercase",
-              }}
-            >
-              Win a box of cookies.
+              {` Every cookie deserves it's moment.`}
             </Typography>
           </Box>
           <Button label="Vote now" onPress={onPress} />

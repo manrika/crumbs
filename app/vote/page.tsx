@@ -43,7 +43,7 @@ export default async function Vote() {
         }}
       >
         Help us crown the CRUMBS cookie of 2026 and a chance to win a box of
-        cookies on us!
+        cookies!
       </Typography>
       <VotingForm nominees={nominees || []} />
     </PageContainer>
