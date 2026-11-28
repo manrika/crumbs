@@ -1,4 +1,4 @@
-import { PAGE_MARGIN } from "@/app/components/PageContainer";
+import { PAGE_RESPONSIVE_MARGIN } from "@/app/components/PageContainer";
 import { Box, Typography } from "@mui/material";
 
 type Props = {
@@ -31,8 +31,8 @@ const Carousel: React.FC<Props> = ({ title, children }) => {
           overflowX: "auto",
           overflowY: "hidden",
           flexWrap: "nowrap",
-          mr: `-${PAGE_MARGIN}`,
-          pr: PAGE_MARGIN,
+          mr: `-${PAGE_RESPONSIVE_MARGIN}`,
+          pr: PAGE_RESPONSIVE_MARGIN,
           pb: 2,
           scrollSnapType: "x mandatory",
           WebkitOverflowScrolling: "touch",

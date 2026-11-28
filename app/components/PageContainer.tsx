@@ -3,7 +3,13 @@ import CrumbsLogo from "@/app/components/CrumbsLogo";
 import NavBar from "@/app/components/NavBar";
 import { Box } from "@mui/material";
 
-export const PAGE_MARGIN = "18px";
+export const PAGE_RESPONSIVE_MARGIN = {
+  xs: "18px",
+  sm: "24px",
+  md: "48px",
+  lg: "80px",
+  xl: "120px",
+};
 
 type Props = {
   showNavBar?: boolean;
@@ -20,7 +26,7 @@ const PageContainer: React.FC<Props> = ({
     <Box
       sx={{
         backgroundColor: "#F1E6D8",
-        px: PAGE_MARGIN,
+        px: PAGE_RESPONSIVE_MARGIN,
         mb: "24px",
         width: "100%",
         overflowX: "clip",

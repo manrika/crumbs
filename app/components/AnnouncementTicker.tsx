@@ -32,12 +32,24 @@ const AnnouncementTicker = () => {
   return (
     <Box
       sx={{
-        width: "calc(100% + 36px)",
+        width: {
+          xs: "calc(100% + 36px)",
+          sm: "calc(100% + 48px)",
+          md: "calc(100% + 96px)",
+          lg: "calc(100% + 160px)",
+          xl: "calc(100% + 240px)",
+        },
         overflow: "hidden",
         backgroundColor: "#BCB4DD",
         color: "#fff",
         py: "14px",
-        mx: "-18px",
+        mx: {
+          xs: "-18px",
+          sm: "-24px",
+          md: "-48px",
+          lg: "-80px",
+          xl: "-120px",
+        },
       }}
     >
       <Box
